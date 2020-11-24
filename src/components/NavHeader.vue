@@ -98,11 +98,67 @@
           </div>
           <div class="item-meun">
             <span>RedMi红米</span>
-            <div class="children"></div>
           </div>
           <div class="item-meun">
             <span>电视</span>
-            <div class="children"></div>
+            <div class="children">
+              <ul>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src="/imgs/nav-img/nav-3-3.png" />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src="/imgs/nav-img/nav-3-3.png" />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src="/imgs/nav-img/nav-3-3.png" />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src="/imgs/nav-img/nav-3-3.png" />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src="/imgs/nav-img/nav-3-3.png" />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src="/imgs/nav-img/nav-3-3.png" />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">699元</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="header-search">
@@ -119,7 +175,29 @@
 <script>
 export default {
   name: "nav-header",
-};
+  data() {
+    return {
+      username: "jack",
+      phoneList: []
+    }
+  },
+  mounted() {
+
+  },
+  methods:{
+    getProductList(){
+      this.axios.get('/products',{
+        params:{
+          categoryId:"10012",
+        }
+      }).then((res)=>{
+        if(res.list>6){
+          this.phoneList = res.list.slice(0,6)
+        }
+      })
+    }
+  }
+}
 </script>
 <style lang="scss">
 @import "./../assets/scss/config.scss";
@@ -229,7 +307,7 @@ export default {
             height: 0;
             opacity: 0;
             overflow: hidden;
-            border-top:1px solid #E5E5E5;
+            border-top: 1px solid #e5e5e5;
             box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
             z-index: 10;
             transition: all 0.5s;
