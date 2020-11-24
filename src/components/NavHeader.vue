@@ -25,17 +25,84 @@
         <div class="header-menu">
           <div class="item-meun">
             <span>小米手机</span>
-            <div class="childen">
-
+            <div class="children">
+              <ul>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png"
+                      />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png"
+                      />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png"
+                      />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png"
+                      />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png"
+                      />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img
+                        src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/f515ab05232ed14ccd78ec67e024495a.png"
+                      />
+                    </div>
+                    <div class="pro-name">小米CC9</div>
+                    <div class="pro-price">1799元</div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="item-meun">
             <span>RedMi红米</span>
-            <div class="childen"></div>
+            <div class="children"></div>
           </div>
           <div class="item-meun">
             <span>电视</span>
-            <div class="childen"></div>
+            <div class="children"></div>
           </div>
         </div>
         <div class="header-search">
@@ -55,7 +122,7 @@ export default {
 };
 </script>
 <style lang="scss">
-// @import "./../assets/scss/base.scss";
+@import "./../assets/scss/config.scss";
 .header {
   .nav-topbar {
     height: 39px;
@@ -99,6 +166,7 @@ export default {
       margin-left: auto;
       justify-content: space-between;
       align-items: center;
+      position: relative;
       .header-logo {
         display: inline-block;
         width: 55px;
@@ -146,6 +214,68 @@ export default {
           span {
             cursor: pointer;
           }
+          &:hover {
+            color: $colorA;
+            .children {
+              height: 220px;
+              opacity: 1;
+            }
+          }
+          .children {
+            position: absolute;
+            top: 112px;
+            left: 0;
+            width: 1226px;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            border-top:1px solid #E5E5E5;
+            box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
+            z-index: 10;
+            transition: all 0.5s;
+            background-color: #ffffff;
+            .product {
+              position: relative;
+              float: left;
+              width: 16.6%;
+              height: 220px;
+              font-size: 12px;
+              line-height: 12px;
+              text-align: center;
+              a {
+                display: inline-block;
+              }
+              img {
+                width: auto;
+                height: 111px;
+                margin-top: 26px;
+              }
+              .pro-img {
+                height: 137px;
+              }
+              .pro-name {
+                font-weight: bold;
+                margin-top: 19px;
+                margin-bottom: 8px;
+                color: $colorB;
+              }
+              .pro-price {
+                color: $colorA;
+              }
+              &:before {
+                content: " ";
+                position: absolute;
+                top: 28px;
+                right: 0;
+                border-left: 1px solid $colorF;
+                height: 100px;
+                width: 1px;
+              }
+              &:last-child:before {
+                display: none;
+              }
+            }
+          }
         }
       }
     }
@@ -157,9 +287,9 @@ export default {
         display: flex;
         align-items: center;
         input {
-          border:none;
+          border: none;
           box-sizing: border-box;
-          border-right: 1px solid #E0E0E0;
+          border-right: 1px solid #e0e0e0;
           width: 264px;
           height: 50px;
           padding-left: 14px;
